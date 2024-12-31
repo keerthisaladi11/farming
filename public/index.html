@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/bootstrap-icons/font/bootstrap-icons.min.css">
+    <script src="./lib/jquery.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./lib/capthcaGenerator.js"></script>
+</head>
+<body>
+    <header>
+      <!-------------------------------------navbar-------------------------------------->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary " class="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">logo loading</a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <form class="d-flex" role="search" class="searchbar">
+              <input class="form-control me-2" type="search" placeholder="Search"  aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              
+              <li class="nav-item">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#LoginModal">
+                 <a class="nav-link-" href="#"></a>Login</button>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">  WishList</a>
+              </li>
+
+              <li class="nav-item">
+                <img src="./images/cart.jpeg" alt="" width="60px" height="50px">
+                <a class="nav-link active" aria-current="page" href="#"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+       <!-------------------------------------------carousel--------------------------------------->
+        <div id="carouselIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://www.homebiogas.com/wp-content/uploads/2023/09/shutterstock_1789648031-1024x683.jpg" class="d-block w-100" alt="first item">
+              </div>
+              <div class="carousel-item">
+                <img src="https://iffconanos3images.s3.ap-south-1.amazonaws.com/public/admin/news/qOl6YTcJW00LuydNMCObkixfyg2Kjg36Ff9DpunL.jpg" class="d-block w-100" alt="second item">
+              </div>
+              <div class="carousel-item">
+                <img src="https://www.farmersstop.com/cdn/shop/files/Copy_of_All_Agriculture_Inputs_at_Single_Place_4_1503x352.png?v=1676891177" height="500px" class="d-block w-100" alt="third item">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+      <!-------------------------------login modal------------------------------------->
+      <!-- Button trigger modal -->
+
+      <div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true"
+      class="modal-lg">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+<!----------------------------------------------modal body----------------------------------------------------->
+            <div class="modal-body">
+              <form class="modal_border ">
+                <header class="form_header">Login</header>
+<!-------------------------------account id-->
+                <div class="details mb-3">
+                  <label for="InputEmail1" class="form-label">Account Id</label>
+                  <div>
+                    <input type="text" class="form-control " id="userId" aria-describedby="userid"  >
+                  </div>
+                  <div id="emailHelp" class="form-text">We'll never share your details with anyone else.</div>
+                </div>
+<!---------------------------------password-->
+                <div class="details mb-3">
+                  <label for="InputPassword" class="form-label">Password</label>
+                  <div>
+                    <input type="password" class="form-control" id="accountPassword" >
+                  </div>
+                </div>
+<!---------------------------------forgot password-->
+                <div class="forgot_password">
+                  <span class="forgotpwd" data-bs-target="#forgotModal" type="button" data-bs-toggle="modal">Forgot password?</span>
+                </div>
+ <!--------------- --------- CAPTCHA Container ------->  
+                <div class="captcha-container d-flex align-items-center mb-3">
+                  <canvas id="captchaCanvas" width="150" height="50"></canvas>
+                  <button type="button" class="btn btn-link p-0 ms-2" onclick="showCaptcha()" aria-label="Refresh CAPTCHA">
+                    <i class="bi bi-arrow-clockwise"></i>
+                  </button>
+                  <input type="text" id="captchaInput" placeholder="Enter CAPTCHA" required>
+                </div>
+
+<!----------checkbox------------>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="Check1">
+                  <label class="form-check-label" for="Check1">Remember Me</label>
+                </div>
+<!-------------signup details-------->
+                  Don't have an account?<span class="signuplink" data-bs-target="#signUpModal" type="button" data-bs-toggle="modal">Sign Up</span>
+                <div class="signup">
+                  OR SignUp Using
+                  <div class="icons">
+                    <i class="bi bi-google google_icon">google</i>
+                    <i class="bi bi-microsoft ms_icon"></i>
+                    <i class="bi bi-apple apple_icon"></i>
+                  </div>
+                </div>
+              </form>
+            </div>
+<!------------------------modal footer------------------->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary"  data-bs-dismiss="modal" id="loginbtn" >Login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!--------------------------------footer-------------------------------------->
+    <footer>footer
+      <div class="fluid-container">
+        <footer class="py-5 footer-panel">
+          <div class="row">
+            <div class="col-6 col-md-2 mb-3">
+              <h5 class="footer-h5">Get to Know Us</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Careers</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Blogs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">About AaoShopKaro</a>
+                </li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Investor
+                    Relations</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">AaoShopKaro
+                    Devices</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">AaoShopKaro
+                    Science</a></li>
+              </ul>
+            </div>
+    
+            <div class="col-6 col-md-2 mb-3">
+              <h5 class="footer-h5">Male Money with Us</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Sell products on
+                    AaoShopKaro</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Sell on AaoShopKaro
+                    Business</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Sell apps on
+                    AaoShopKaro</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Become an
+                    Affiliate</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Advertise Your
+                    Products</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Self-Publish with
+                    Us</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Host an AaoShopKaro
+                    Hub</a></li>
+              </ul>
+            </div>
+    
+            <div class="col-6 col-md-2 mb-3">
+              <h5 class="footer-h5">Let Us Help You</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">AaoShopKaro and
+                    COVID-19</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Your Account</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Your Orders</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Shipping Rates &
+                    Policies</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Returns &
+                    Replacements</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Manage Your Content
+                    and Devices</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Help</a></li>
+              </ul>
+            </div>
+    
+            <div class="col-md-5 offset-md-1 mb-3">
+              <form>
+                <h5 class="footer-h5">Subscribe to our AaoShopKaro Channel</h5>
+                <p>Get Amazing Sales Updates.</p>
+                <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                  <label for="newsletter1" class="visually-hidden">Email address</label>
+                  <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                  <button class="btn subscribe-btn btn" type="button">Subscribe</button>
+                </div>
+              </form>
+            </div>
+          </div>
+    
+          <div class="d-flex flex-column flex-sm-row justify-content-center py-2 my-4 border-top">
+            <p class="footer-end-pTag">© 2024 NIT Hyderabad, Inc. All rights reserved.</p>
+            <ul class="list-unstyled d-flex">
+              <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-facebook footer-icons"></i></a></li>
+              <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-instagram footer-icons"></i></a></li>
+              <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-twitter-x footer-icons"></i></a></li>
+            </ul>
+          </div>
+          <div class="footer-pannel3">
+            <div class="logo"></div>
+          </div>
+        </footer>
+      </div>
+      </div>
+    
+      
+    </footer>
+</body>
+</html>

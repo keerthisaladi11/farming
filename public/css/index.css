@@ -1,0 +1,132 @@
+header{
+    background-color: #222f3d;
+    height: fit-content;
+    height: 70px;
+    color: white;
+    margin-bottom: 10px;
+}
+nav{
+    background-color: black;
+}
+footer{
+    background-color: #222f3d;
+    height: fit-content;
+    color: white;
+}
+main{
+    height: auto;
+    color: #fff;
+}
+#carouselIndicators
+{
+    color: black;
+}
+.nav-item{
+    margin-right: 100px;
+}
+.searchbar{
+    margin-right: 1000px;
+}
+/* ------------------login------------------ */
+.modal-body,
+.modal-header {
+    background-color: #303242; 
+    /* background: #394359;  */
+}
+	
+.form_body {
+    border: 1px solid black;
+    padding: 20px;
+    width: 330px;
+    margin: 10px auto;
+    background: linear-gradient(205deg, gray,black);
+    background-color: white;
+    position: relative;
+    color: #fff;
+}
+#emailHelp{
+    color: goldenrod;
+}
+
+.form-control:hover {
+
+    background-color: whitesmoke;
+
+}
+.form_header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: initial;
+    margin: 2px;
+    font-style: italic;
+    background-color: #303242; 
+    
+
+}
+
+.forgot_password {
+    text-align: right;
+}
+.captcha-container
+{
+    background-color: goldenrod;
+    color: white;
+    height: 40px;
+    width: 150px;
+   
+}
+
+
+.pass_icon {
+    position: absolute;
+    top: 230px;
+    left: 30px;
+    color: white;
+}
+.userIcon{
+    position: relative;
+    bottom: 30px;
+    left: 90%;
+    color: #222f3d;
+}
+
+p {
+    text-align: center;
+}
+i{
+    visibility: visible;
+}
+
+.google_icon,
+.ms_icon,
+.apple_icon {
+    padding: 10px;
+}
+
+.signup {
+    text-align: center;
+    padding: 10px;
+}
+.icons{
+    color: #fff;
+}
+.forgotpwd,.signuplink{
+    color: goldenrod;
+}
+#button,.cancel_btn
+{
+    background-color: goldenrod;
+}
+.cancel_text{
+    color: white;
+}
+.btn-close{
+    background-color: goldenrod;
+}
+#button{
+    color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+/* ----------------footer------------------ */
